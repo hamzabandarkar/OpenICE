@@ -1,0 +1,22 @@
+[package]
+name = "openice-cli"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "openice"
+path = "src/main.rs"
+
+[dependencies]
+openice-core = { path = "../openice-core" }
+openice-engine = { path = "../openice-engine" }
+openice-enforcement = { path = "../openice-enforcement" }
+clap = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-appender = { workspace = true }
+anyhow = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+windows = { workspace = true }

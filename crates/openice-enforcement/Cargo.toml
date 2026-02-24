@@ -1,0 +1,12 @@
+[package]
+name = "openice-enforcement"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+openice-core = { path = "../openice-core" }
+windows = { workspace = true }
+sysinfo = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }

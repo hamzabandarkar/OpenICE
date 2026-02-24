@@ -1,0 +1,65 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/openice-core",
+    "crates/openice-enforcement",
+    "crates/openice-engine",
+    "crates/openice-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["OpenICE Contributors"]
+
+[workspace.dependencies]
+# Windows APIs
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_ProcessStatus",
+    "Win32_System_JobObjects",
+    "Win32_Security",
+    "Win32_System_Registry",
+    "Win32_System_Com",
+    "Win32_NetworkManagement_WindowsFirewall",
+] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
+tracing-appender = "0.2"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+
+# Process info
+sysinfo = "0.32"
+
+# Hashing
+sha2 = "0.10"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Regex for command-line matching
+regex = "1"
+
+# UUID for audit event IDs
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Glob pattern matching
+glob = "0.3"

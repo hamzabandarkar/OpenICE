@@ -1,0 +1,16 @@
+[package]
+name = "openice-engine"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+openice-core = { path = "../openice-core" }
+openice-enforcement = { path = "../openice-enforcement" }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+chrono = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+sysinfo = { workspace = true }

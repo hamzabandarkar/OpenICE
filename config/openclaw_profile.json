@@ -1,0 +1,70 @@
+{
+  "profile_name": "OpenClaw",
+  "description": "Containment profile for OpenClaw AI agent",
+  "version": 1,
+  "priority": 100,
+  "enabled": true,
+  "identifiers": {
+    "match_mode": "any",
+    "rules": [
+      {
+        "type": "process_name",
+        "value": "openclaw.exe"
+      },
+      {
+        "type": "path",
+        "pattern": "C:/Program Files/OpenClaw/**/*.exe",
+        "case_sensitive": false
+      },
+      {
+        "type": "path",
+        "pattern": "C:/Program Files (x86)/OpenClaw/**/*.exe",
+        "case_sensitive": false
+      },
+      {
+        "type": "command_line",
+        "pattern": ".*openclaw.*--autonomous.*",
+        "regex": true
+      }
+    ]
+  },
+  "enforcement": {
+    "default_mode": "quarantine",
+    "modes": {
+      "observe": {
+        "log_process_tree": true,
+        "log_network": true,
+        "log_file_access": true,
+        "log_persistence": true
+      },
+      "contain": {
+        "block_network": true,
+        "block_child_shells": true,
+        "limit_cpu_percent": 10,
+        "limit_memory_mb": 512,
+        "protected_directories": [
+          "C:\\Windows\\System32",
+          "C:\\Users\\*\\Documents"
+        ]
+      },
+      "quarantine": {
+        "kill_process_tree": true,
+        "block_network": true,
+        "remove_persistence": true,
+        "prevent_respawn": true,
+        "respawn_check_interval_secs": 3
+      },
+      "lockdown": {
+        "generate_wdac_policy": true,
+        "generate_applocker_rules": true,
+        "block_by_hash": true,
+        "block_by_signer": true
+      }
+    }
+  },
+  "metadata": {
+    "created": "2026-02-23T00:00:00Z",
+    "author": "OpenICE",
+    "tags": ["ai-agent", "openclaw"]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "profile_name": "default",
+  "description": "Default OpenICE policy template. Customize or create new profiles.",
+  "version": 1,
+  "priority": 1,
+  "enabled": false,
+  "identifiers": {
+    "match_mode": "any",
+    "rules": [
+      {
+        "type": "process_name",
+        "value": "example_agent.exe"
+      }
+    ]
+  },
+  "enforcement": {
+    "default_mode": "observe",
+    "modes": {
+      "observe": {
+        "log_process_tree": true,
+        "log_network": true,
+        "log_file_access": true,
+        "log_persistence": true
+      },
+      "contain": {
+        "block_network": true,
+        "block_child_shells": true,
+        "limit_cpu_percent": null,
+        "limit_memory_mb": null,
+        "protected_directories": []
+      },
+      "quarantine": {
+        "kill_process_tree": true,
+        "block_network": true,
+        "remove_persistence": true,
+        "prevent_respawn": true,
+        "respawn_check_interval_secs": 3
+      },
+      "lockdown": {
+        "generate_wdac_policy": false,
+        "generate_applocker_rules": false,
+        "block_by_hash": true,
+        "block_by_signer": false
+      }
+    }
+  },
+  "metadata": {
+    "created": "2026-02-23T00:00:00Z",
+    "author": "OpenICE",
+    "tags": ["template"]
+  }
+}
