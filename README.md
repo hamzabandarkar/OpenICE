@@ -44,4 +44,22 @@ OpenICE follows a policy-driven modular architecture:
 
 ---
 
+## How to Run
+
+### Requirements
+
+- Windows 10 or Windows 11
+- Rust (stable toolchain)
+- Administrator privileges (required for process control and firewall rules)
+
+Install Rust:
+
+https://www.rust-lang.org/tools/install
+
+Verify installation:
+
+```powershell
+rustc --version
+cargo --version
+
 OpenICE treats AI agents as deterministic software systems that can be governed through precise execution control rather than heuristic malware detection.
