@@ -10,13 +10,6 @@ It provides precision enforcement over locally installed autonomous AI agents by
 - Resource usage
 - Persistence mechanisms
 
-## Project Goals
-
-OpenICE is designed as:
-
-- A learning-focused security systems project
-- A modular containment framework
-- A potential enterprise AI governance platform
 
 ## Phase 1 (Current)
 
