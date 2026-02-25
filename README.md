@@ -55,4 +55,31 @@ Verify installation:
 rustc --version
 cargo --version
 
+```
+
 OpenICE treats AI agents as deterministic software systems that can be governed through precise execution control rather than heuristic malware detection.
+
+```powershell
+
+  # Scan for target AI agent processes (no enforcement)
+  cargo run -- scan
+
+  # Scan with JSON output
+  cargo run -- scan --json
+
+  # Start enforcement in observe mode (watch only, no action)
+  cargo run -- enforce --mode observe
+
+  # Start enforcement in contain mode
+  cargo run -- enforce --mode contain
+
+  # Check status of active enforcements
+  cargo run -- status
+
+  # List loaded policies
+  cargo run -- policy list
+
+  # View audit log
+  cargo run -- log
+
+```
