@@ -1,4 +1,5 @@
 # OpenICE
+OpenICE "ices" unwanted AI processes on your device. 
 
 OpenICE is a deterministic AI agent containment and execution control platform for Windows.
 
